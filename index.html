@@ -34,7 +34,9 @@
   /* ---------- topbar ---------- */
   .topbar{
     display:flex;align-items:center;justify-content:space-between;
-    padding:22px 6vw;
+    padding:22px clamp(24px, 6vw, 100px);
+    max-width:1440px;
+    margin-inline:auto;
     position:relative;z-index:5;
   }
   .brand{
@@ -53,7 +55,9 @@
   /* ---------- hero ---------- */
   .hero{
     position:relative;
-    padding:20px 6vw 60px;
+    padding:20px clamp(24px, 6vw, 100px) 60px;
+    max-width:1440px;
+    margin-inline:auto;
     display:grid;
     grid-template-columns:1fr 1fr;
     align-items:center;
