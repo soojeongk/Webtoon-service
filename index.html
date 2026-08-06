@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEBTOON Global — Service Links by Language</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+  :root{
+    --green: #1ED760;
+    --green-deep: #00C853;
+    --ink: #14151a;
+    --ink-soft: #55585f;
+    --line: #e7e8ec;
+    --bg: #fbfbfc;
+    --card: #ffffff;
+    --radius-lg: 28px;
+    --radius-md: 18px;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Pretendard', -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ---------- topbar ---------- */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 6vw;
+    position:relative;z-index:5;
+  }
+  .brand{
+    font-weight:800;font-size:18px;letter-spacing:-0.02em;
+    display:flex;align-items:center;gap:8px;
+  }
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--green);}
+  .topbar nav a{
+    font-size:14px;font-weight:600;color:var(--ink-soft);
+    padding:10px 18px;border-radius:999px;border:1px solid var(--line);
+    background:#fff;
+    transition:all .2s ease;
+  }
+  .topbar nav a:hover{border-color:var(--ink);color:var(--ink);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:20px 6vw 60px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:20px;
+    min-height:clamp(640px, 88vh, 860px);
+    overflow:hidden;
+  }
+  .hero-stripe{
+    position:absolute;
+    top:-30%;right:8%;
+    width:60vw;height:170%;
+    background:linear-gradient(180deg, rgba(30,215,96,0) 0%, rgba(30,215,96,.28) 45%, rgba(30,215,96,0) 80%);
+    transform:rotate(12deg);
+    z-index:0;
+    pointer-events:none;
+  }
+  .hero-text{position:relative;z-index:2;max-width:100%;overflow-wrap:break-word;}
+  .eyebrow{
+    display:inline-block;
+    font-size:13px;font-weight:700;color:var(--green-deep);
+    background:rgba(30,215,96,.12);
+    padding:6px 14px;border-radius:999px;
+    margin-bottom:22px;
+    letter-spacing:.02em;
+  }
+  .hero-text h1{
+    font-size:clamp(34px,4.6vw,58px);
+    line-height:1.12;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    margin:0 0 20px;
+  }
+  .hero-text h1 .accent{color:var(--green-deep);}
+  .hero-text .lead{
+    font-size:16px;line-height:1.6;color:var(--ink-soft);
+    max-width:440px;margin:0 0 28px;
+  }
+  .tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px;}
+  .tag-pill{
+    font-size:13px;font-weight:600;color:var(--ink-soft);
+    background:#fff;border-radius:999px;
+    padding:9px 16px;
+    box-shadow:0 6px 16px rgba(20,21,26,.08);
+  }
+  .cta-scroll{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--ink);color:#fff;
+    font-weight:700;font-size:15px;
+    padding:15px 26px;border-radius:999px;
+    box-shadow:0 10px 24px rgba(20,21,26,.18);
+    transition:transform .2s ease;
+  }
+  .cta-scroll:hover{transform:translateY(-2px);}
+  .cta-scroll svg{width:14px;height:14px;}
+
+  /* ---------- hero visual ---------- */
+  /* Proportions mirror the source deck: the phone is the tallest, most
+     prominent element; the standing characters are deliberately shorter
+     (60–80% of the phone's height) so they read as flanking figures
+     rather than competing focal points. */
+  .hero-visual{
+    position:relative;
+    height:600px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    z-index:1;
+  }
+  .char{
+    position:absolute;
+    bottom:0;
+    filter:drop-shadow(0 18px 24px rgba(20,21,26,.16));
+  }
+  .char-woman{
+    left:3%;
+    height:378px;
+    z-index:1;
+  }
+  .char-man{
+    right:-3%;
+    height:448px;
+    z-index:1;
+  }
+  .char-baby{
+    right:8%;
+    height:420px;
+    z-index:2;
+  }
+  .phone{
+    position:relative;
+    z-index:3;
+    width:260px;height:576px;
+    border-radius:36px;
+    background:#0d0e12;
+    padding:10px;
+    box-shadow:0 30px 60px rgba(20,21,26,.28), 0 0 0 1px rgba(255,255,255,.04) inset;
+  }
+  .phone::before{
+    content:"";
+    position:absolute;
+    top:22px;left:50%;
+    width:70px;height:8px;
+    background:#0d0e12;
+    border-radius:999px;
+    transform:translateX(-50%);
+    z-index:4;
+  }
+  .phone .screen{
+    width:100%;height:100%;
+    border-radius:26px;
+    overflow:hidden;
+    background:#000;
+    position:relative;
+  }
+  .phone video{
+    width:100%;height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  /* ---------- services ---------- */
+  .services{
+    padding:90px 6vw 110px;
+    background:#fff;
+    border-top:1px solid var(--line);
+  }
+  .services-head{
+    text-align:center;max-width:640px;margin:0 auto 52px;
+  }
+  .services-head .eyebrow{margin-bottom:16px;}
+  .services-head h2{
+    font-size:clamp(26px,3vw,36px);
+    font-weight:800;letter-spacing:-0.02em;
+    margin:0 0 14px;
+  }
+  .services-head p{
+    color:var(--ink-soft);font-size:15px;line-height:1.6;margin:0;
+  }
+
+  .folder-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:26px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .service-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:38px 26px 30px;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 22px 40px rgba(20,21,26,.10);
+    border-color:transparent;
+  }
+  .region-tab{
+    position:absolute;
+    top:-14px;left:26px;
+    background:var(--ink);
+    color:#fff;
+    font-size:12px;font-weight:800;letter-spacing:.03em;
+    padding:7px 14px;
+    border-radius:999px;
+  }
+  .service-logo{
+    width:76px;height:76px;
+    border-radius:20px;
+    object-fit:cover;
+    margin-bottom:20px;
+    box-shadow:0 8px 18px rgba(20,21,26,.12);
+  }
+  .service-card h3{
+    font-size:18px;font-weight:800;margin:0 0 6px;letter-spacing:-0.01em;
+  }
+  .service-card .langs{
+    font-size:13px;color:var(--ink-soft);margin:0 0 22px;
+    line-height:1.5;
+  }
+  .service-card .cta{
+    margin-top:auto;
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13.5px;font-weight:700;
+    color:var(--green-deep);
+    background:rgba(30,215,96,.12);
+    padding:10px 18px;border-radius:999px;
+    transition:background .2s ease;
+  }
+  .service-card:hover .cta{background:var(--green-deep);color:#fff;}
+
+  footer{
+    padding:34px 6vw 44px;
+    display:flex;justify-content:space-between;align-items:center;
+    color:var(--ink-soft);font-size:13px;
+    background:#fff;
+  }
+
+  @media (max-width: 1000px){
+    .hero{grid-template-columns:1fr;padding-top:6px;}
+    .hero-visual{height:480px;order:-1;}
+    .char-woman{height:302px;left:2%;}
+    .char-man{height:358px;right:-2%;}
+    .char-baby{height:336px;right:7%;}
+    .phone{width:210px;height:462px;}
+    .hero-text{text-align:center;}
+    .hero-text .lead{margin-inline:auto;}
+    .tag-row{justify-content:center;}
+    .folder-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width: 600px){
+    .folder-grid{grid-template-columns:1fr;}
+    .topbar nav{display:none;}
+    .char-woman,.char-man,.char-baby{position:relative;display:none;}
+    .hero-visual{height:auto;}
+    .region-tab{
+      left:50%;
+      transform:translateX(-50%);
+      max-width:82%;
+      white-space:normal;
+      text-align:center;
+      font-size:11px;
+      line-height:1.4;
+      padding:7px 12px;
+    }
+    .hero-text h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> WEBTOON GLOBAL LINKS</div>
+    <nav><a href="#services">Services</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-stripe"></div>
+
+    <div class="hero-text">
+      <span class="eyebrow">WEBTOON at a Glance</span>
+      <h1>BRINGING COMICS<br><span class="accent">FROM PAPER</span> TO SCREEN</h1>
+      <p class="lead">Experience comics in a whole new way — more immersive, and right at your fingertips.</p>
+      <div class="tag-row">
+        <span class="tag-pill">#bite-sized</span>
+        <span class="tag-pill">#vertical-format</span>
+        <span class="tag-pill">#simply-swipe</span>
+      </div>
+      <a class="cta-scroll" href="#services">
+        Explore Services
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-visual">
+      <img class="char char-woman" src="ref/woman1.png" alt="">
+      <img class="char char-baby" src="ref/baby1.png" alt="">
+      <div class="phone">
+        <div class="screen">
+          <video src="ref/video%20sample.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+      <img class="char char-man" src="ref/man1.png" alt="">
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="services-head">
+      <span class="eyebrow">Where to Read</span>
+      <h2>Quick Links by Service</h2>
+      <p>Pick the platform for your region and language, and jump straight in.</p>
+    </div>
+
+    <div class="folder-grid">
+
+      <a class="service-card" href="https://comic.naver.com/index" target="_blank" rel="noopener">
+        <span class="region-tab">KR</span>
+        <img class="service-logo" src="WEBTOON_KR_AppIcon.png" alt="WEBTOON Korea logo">
+        <h3>WEBTOON Korea</h3>
+        <p class="langs">Korean</p>
+        <span class="cta">Visit site →</span>
+      </a>
+
+      <a class="service-card" href="https://www.webtoons.com/en/" target="_blank" rel="noopener">
+        <span class="region-tab">EN · DE · ES · FR · ID · TH · TW</span>
+        <img class="service-logo" src="WEBTOON_WebIcon.png" alt="WEBTOON logo">
+        <h3>WEBTOON</h3>
+        <p class="langs">Select your language at the bottom of the site</p>
+        <span class="cta">Visit site →</span>
+      </a>
+
+      <a class="service-card" href="https://manga.line.me/" target="_blank" rel="noopener">
+        <span class="region-tab">JP</span>
+        <img class="service-logo" src="LINEMANGA_AppIcon.png" alt="LINE Manga logo">
+        <h3>LINE Manga</h3>
+        <p class="langs">Japanese</p>
+        <span class="cta">Visit site →</span>
+      </a>
+
+      <a class="service-card" href="https://www.dongmanmanhua.cn/" target="_blank" rel="noopener">
+        <span class="region-tab">CN</span>
+        <img class="service-logo" src="dongman.webp" alt="dongman logo">
+        <h3>懂漫 dongman</h3>
+        <p class="langs">Chinese</p>
+        <span class="cta">Visit site →</span>
+      </a>
+
+      <a class="service-card" href="https://series.naver.com/novel/home.series" target="_blank" rel="noopener">
+        <span class="region-tab">KR · Webnovel</span>
+        <img class="service-logo" src="NAVERSERIES_AppIcon.png" alt="NAVER Series logo">
+        <h3>NAVER Series</h3>
+        <p class="langs">Korean web novels</p>
+        <span class="cta">Visit site →</span>
+      </a>
+
+      <a class="service-card" href="https://www.wattpad.com/" target="_blank" rel="noopener">
+        <span class="region-tab">Global · Webnovel</span>
+        <img class="service-logo" src="Wattpad_AppIcon.png" alt="Wattpad logo">
+        <h3>Wattpad</h3>
+        <p class="langs">Global web novels</p>
+        <span class="cta">Visit site →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <span>© WEBTOON. Internal reference page.</span>
+    <span>Design ref: Maffia Nanny</span>
+  </footer>
+
+</body>
+</html>
