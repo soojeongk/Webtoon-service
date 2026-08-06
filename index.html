@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WEBTOON Global — Service Links by Language</title>
+<script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
 <link rel="icon" type="image/png" href="WEBTOON_WebIcon.png">
 <meta property="og:title" content="WEBTOON Global — Service Links by Language">
 <meta property="og:description" content="Bringing comics from paper to screen. Jump straight to WEBTOON, LINE Manga, dongman, NAVER Series, and Wattpad by region and language.">
@@ -407,5 +408,9 @@
     <span>Design ref: Maffia Nanny</span>
   </footer>
 
+  <script>
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    window.scrollTo(0, 0);
+  </script>
 </body>
 </html>
